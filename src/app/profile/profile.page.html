@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ <ion-card  align="center" color="success">
+
+  <ion-item lines="full">
+    <ion-label position="floating">Name</ion-label>
+    <input type="text" id="id_us" hidden="true" disabled="true">
+    <input type="text" id="role_us" hidden="true" disabled="true">
+    <input type="text" id="type_us" hidden="true" disabled="true">
+    <input type="text" id="status_us" hidden="true" disabled="true">
+    <ion-input [clearInput]="true" placeholder="Name" id="name_us" color="dark" align="center" disabled="true" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full"> 
+    <ion-label position="floating">Last Name</ion-label>
+    <ion-input [clearInput]="true" placeholder="Last Name" id="lastname_us" color="dark" align="center" disabled="true" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">M. Last Name</ion-label>
+    <ion-input [clearInput]="true" placeholder="M. Last Name" id="lastnamem_us" color="dark" align="center" disabled="true" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Phone</ion-label>
+    <ion-input [clearInput]="true" placeholder="Phone" id="phone_us" color="dark"  type="number" (focusout)="CheckPhone()" align="center" disabled="true" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [clearInput]="true" placeholder="Email" id="email_us" color="dark" type="email" (focusout)="CheckEmail()" type="email" align="center" disabled="true" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">User</ion-label>
+    <ion-input [clearInput]="true" placeholder="User" id="username_us" color="dark" align="center" disabled="true" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [clearInput]="true" placeholder="Password" id="password_us" color="dark" type="password" align="center" disabled="true" required>
+    </ion-input>
+  </ion-item>
+
+
+  <div id="preloader_us" align="center" style="display: none">
+    <img src="../assets/icon/preloader2.gif" alt="validating...">
+</div>
+
+<br>
+
+<div align="center">
+<ion-button (click)="EditUS()" id="editbutton_us" color="success" shape="round" >
+  <ion-icon slot="end" name="save-outline"></ion-icon>
+    Edit
+  </ion-button>
+
+<ion-button (click)="UpdateUS()" id="updatebutton_us" hidden="medium" color="primary" shape="round" fill="outline">
+  <ion-icon slot="end" name="reload-circle-outline"></ion-icon>   
+  Update
+</ion-button>
+
+<ion-button (click)="Cancel()" id="cancelbutton_us" hidden="medium" color="danger" shape="round" fill="outline">
+  <ion-icon slot="end" name="close-outline"></ion-icon>   
+    Cancel
+</ion-button>
+</div>
+  
+  </ion-card>
+
+  <ion-item *ngFor="let u of profile">
+    <ion-card style="width: 100%;" align="center" color="success">
+      
+      
+    </ion-card>
+      
+  </ion-item>
+
+</ion-content>

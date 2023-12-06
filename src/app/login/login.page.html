@@ -1,0 +1,103 @@
+<ion-header> 
+  <ion-toolbar color="success">
+    <ion-title align="center">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="auth-form"  align="center">
+
+  <br>
+  <br>
+  <br>
+
+  <div align="center">
+    <img src="../assets/icon/UPSRJ.png" width="200px" height="200px">
+  </div>
+
+  <div id="preloader" align="center" style="display: none">
+      <img src="../assets/icon/loading-icon.gif" alt="Validating...">
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div id="panellogin" align="center">
+  
+    <form>
+
+      <ion-item fill="solid">
+        <ion-label lines="full" position="floating">Usuario</ion-label>
+        <ion-input [clearInput]="true"  id="user" placeholder="User" align="center" required></ion-input>
+      </ion-item>
+
+      <ion-item fill="solid">
+        <ion-label lines="full" position="floating">Contraseña</ion-label>
+        <ion-input [clearInput]="true" type="password"  id="pass" placeholder="Password" align="center" required></ion-input>
+      </ion-item>
+      
+      <br>
+
+      <ion-button expand="block" (click)="Login()" id="botonlogin" color="success" shape="round">
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+          Login
+      </ion-button>
+
+      <br>
+      
+      <ion-button expand="block" (click)="ResetLogin()" id="botonresetlogin" color="success" shape="round">
+        <ion-icon slot="end" name="refresh-outline"></ion-icon>
+          Restaurar sesión
+      </ion-button>
+
+      <br>
+
+      <span class="divider line one-line">or</span>
+
+      <ion-button expand="block" (click)="EsconderPanel()" id="botonesconder" color="success" shape="round">
+        <ion-icon slot="end" name="key-outline"></ion-icon>
+          Nueva contraseña
+      </ion-button>
+
+   </form>
+
+  </div>
+
+  <div id=panelcontraseña align="center">
+
+    <h2 class="title" align="center">Valida tus datos</h2>
+    
+    <div class="list">
+
+      <ion-item fill="solid">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input [clearInput]="true" color="dark" id="usuariores" placeholder="User" align="center"></ion-input>
+      </ion-item>
+
+      <ion-item fill="solid">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [clearInput]="true" color="dark" id="correores" placeholder="Email" align="center"></ion-input>
+      </ion-item>
+
+      <ion-item fill="solid">
+        <ion-label position="floating">Telefono</ion-label>
+        <ion-input [clearInput]="true" color="dark" id="telefonores" placeholder="Phone" align="center"></ion-input>
+      </ion-item>
+
+    </div>   
+
+      <br>
+
+    <ion-button (click)="RestablecerContrasena()" id="botonrestablecer" color="success" shape="round" fill="outline">
+     <ion-icon  slot="end" name="reload-outline"></ion-icon>
+        Restaurar
+    </ion-button>
+    
+    <ion-button (click)="MostrarPanel()" id="botonmostrar" color="success" shape="round" fill="outline">
+      <ion-icon  slot="end" name="return-up-back-outline"></ion-icon>
+        Regresar
+    </ion-button>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,134 @@
+<ion-header> 
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card align="center" color="medium">
+
+  <ion-item lines="full">
+    <ion-label position="floating">Nombre</ion-label>
+    <input type="text" id="id_u" hidden="true">
+    <input type="text" id="role" hidden="true">
+    <input type="text" id="type" hidden="true">
+    <input type="text" id="status" hidden="true">
+    <ion-input [clearInput]="true" placeholder="Name" id="name" color="dark" align="center" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full"> 
+    <ion-label position="floating">Apellido Paterno</ion-label>
+    <ion-input [clearInput]="true" placeholder="Last Name" id="lastname" color="dark" align="center" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Apellido Materno</ion-label>
+    <ion-input [clearInput]="true" placeholder="M. Last Name" id="lastnamem" color="dark" align="center" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Telefono</ion-label>
+    <ion-input [clearInput]="true" placeholder="Phone" id="phone" color="dark"  type="number" (focusout)="CheckPhone()" align="center" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [clearInput]="true" placeholder="Email" id="email" color="dark" type="email" (focusout)="CheckEmail()" type="email" align="center" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input [clearInput]="true" placeholder="User" id="username" color="dark" (focusout)="CheckUser()" align="center" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [clearInput]="true" placeholder="Password" id="password" color="dark" type="password" align="center" required>
+    </ion-input>
+  </ion-item>
+
+  <div id="preloader_u" align="center" style="display: none">
+        <img src="../assets/icon/loading-icon.gif" alt="validating...">
+    </div>
+
+    <br>
+
+  <div align="center">
+    <ion-button (click)="SaveUser()" id="savebutton_u" color="dark" shape="round" >
+      <ion-icon slot="end" name="save-outline"></ion-icon>
+        Guardar
+      </ion-button>
+
+    <ion-button (click)="UpdateUser()" id="updatebutton_u" hidden="medium" color="primary" shape="round" >
+      <ion-icon slot="end" name="reload-circle-outline"></ion-icon>   
+        Actualizar
+    </ion-button>
+
+    <ion-button (click)="Cancel()" id="cancelbutton_u" hidden="medium" color="danger" shape="round" >
+      <ion-icon slot="end" name="close-outline"></ion-icon>   
+        Cancelar
+    </ion-button>
+  </div>
+
+</ion-card>
+  
+  <ion-item color="medium">
+    <ion-icon name="list-outline" slot="start"></ion-icon>
+    <ion-label > Usuarios </ion-label>
+  </ion-item>
+
+
+  <ion-item *ngFor="let u of users">
+    <ion-card style="width: 100%;" align="center" color="dark">
+      <ion-label>
+
+        <ion-buttons>
+        
+          <ion-button (click)="EditUser(u.id_usuario)" id="editbutton" style="font-size: 20px;" >
+            <ion-icon name="create-outline" color="primary"></ion-icon>
+          </ion-button>
+
+          <ion-button (click)="DeleteUser(u.id_usuario)" id="deletebutton" style="font-size: 20px;">
+            <ion-icon name="trash-bin-outline" color="danger"></ion-icon>
+          </ion-button>
+
+        </ion-buttons> 
+
+        <br>
+
+        <p>Nombre</p>
+        <h1>{{u.nombre}}</h1>
+        <br>
+        <p>Apellido Paterno</p>
+        <h1>{{u.apaterno}}</h1>
+        <br>
+        <p>Apellido Materno</p>
+        <h1>{{u.amaterno}}</h1>
+        <br>
+        <p>Telefono</p>
+        <h1>{{u.telefono}}</h1>
+        <br>
+        <p>Email</p>
+        <h1>{{u.email}}</h1>  
+        <br>
+
+      </ion-label>
+
+      <br>
+      
+    </ion-card>
+      
+  </ion-item>
+  
+</ion-content>
+

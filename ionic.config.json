@@ -1,0 +1,7 @@
+{
+  "name": "APP_UPSRJ",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
